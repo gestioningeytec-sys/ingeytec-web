@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nosotros - INGEYTEC</title>
+  <meta name="description" content="Conoce a INGEYTEC, expertos con más de 20 años de experiencia en ingeniería, climatización y soluciones HVAC-R para empresas en Perú.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +25,7 @@
     a { text-decoration: none; }
     ul { list-style: none; padding: 0; margin: 0; }
 
-    /* HEADER (Igual al index) */
+    /* HEADER */
     header { background-color: #ffffff; padding: 15px 0; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
     .container { max-width: 1300px; margin: 0 auto; padding: 0 20px; }
     header .container { display: flex; justify-content: space-between; align-items: center; }
@@ -38,7 +39,7 @@
     .contact-details .label { font-size: 11px; font-weight: 500; display: block;}
     .contact-details .phone { font-size: 16px; font-weight: 700; display: block;}
 
-    /* HERO SPLIT SECTION (Mitad azul, mitad foto) */
+    /* HERO SPLIT SECTION */
     .hero-split { display: flex; margin-top: 90px; min-height: 500px; }
     .hero-text-box { flex: 1; background-color: var(--dark-blue); color: white; padding: 60px 80px; display: flex; flex-direction: column; justify-content: center; }
     .hero-image-box { flex: 1; background-image: url('fondo-nosotros.png'); background-size: cover; background-position: center; }
@@ -49,10 +50,9 @@
     .hero-title { font-size: 48px; color: white; line-height: 1.1; margin-bottom: 25px; }
     .hero-desc { font-size: 15px; line-height: 1.6; color: #e0e0e0; }
 
-    /* SECCIÓN ABOUT (3 Columnas) */
+    /* SECCIÓN ABOUT */
     .about-section { display: flex; gap: 40px; margin: 80px auto; max-width: 1300px; padding: 0 20px; align-items: flex-start; }
     
-    /* Columna 1: Foto equipo */
     .about-img-col { flex: 1.2; position: relative; }
     .about-img-col img { width: 100%; border-radius: 4px; display: block; }
     .team-badge { position: absolute; bottom: 20px; left: 20px; background-color: var(--dark-blue); color: white; padding: 15px 20px; display: flex; align-items: center; gap: 15px; border-radius: 4px; }
@@ -60,12 +60,10 @@
     .team-badge h4 { color: white; font-size: 14px; margin-bottom: 3px; }
     .team-badge p { font-size: 12px; margin: 0; color: #b0c4de;}
 
-    /* Columna 2: Texto Quiénes somos */
     .about-text-col { flex: 1; }
     .about-text-col h2 { font-size: 24px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;}
     .about-text-col p { font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
 
-    /* Columna 3: Estadísticas */
     .about-stats-col { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; border-left: 1px solid #eee; padding-left: 30px;}
     .stat-box { display: flex; flex-direction: column; gap: 10px; }
     .stat-box-top { display: flex; align-items: center; gap: 15px; }
@@ -89,7 +87,6 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="container">
       <div class="logo">
@@ -97,9 +94,7 @@
       </div>
       <nav class="nav-menu">
         <ul>
-          <!-- IMPORTANTE: Aquí conectamos el botón Inicio con tu index.html -->
           <li><a href="index.html">Inicio</a></li>
-          <!-- El botón Nosotros ahora tiene la clase "active" (rayita azul) -->
           <li><a href="nosotros.html" class="active">Nosotros</a></li>
           <li><a href="#">Servicios <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></a></li>
           <li><a href="#">Alquiler de Equipos</a></li>
@@ -119,7 +114,6 @@
     </div>
   </header>
 
-  <!-- SECCIÓN HERO DIVIDIDA -->
   <section class="hero-split">
     <div class="hero-text-box">
       <div class="breadcrumb">
@@ -130,14 +124,11 @@
       <p class="hero-desc">En INGEYTEC desarrollamos soluciones integrales de climatización para empresas, industrias, centros comerciales y proyectos especiales. Nuestro compromiso es garantizar ambientes confortables mediante ingeniería, tecnología y un equipo altamente especializado.</p>
     </div>
     <div class="hero-image-box">
-      <!-- La imagen de fondo se carga por CSS (fondo-nosotros.png) -->
     </div>
   </section>
 
-  <!-- SECCIÓN QUIÉNES SOMOS -->
   <section class="about-section">
     <div class="about-img-col">
-      <!-- Se requiere una foto del equipo llamada equipo.png -->
       <img src="equipo.png" alt="Equipo Ingeyectec" onerror="this.src='https://via.placeholder.com/600x400/e0e0e0/555?text=Foto+del+Equipo'">
       <div class="team-badge">
         <i class="fa-regular fa-user"></i>
@@ -186,7 +177,6 @@
     </div>
   </section>
 
-  <!-- SECCIÓN POR QUÉ ELEGIRNOS -->
   <section class="why-choose">
     <h2 class="why-title"><span>¿POR QUÉ</span> ELEGIR INGEYTEC?</h2>
     <div class="why-grid">
