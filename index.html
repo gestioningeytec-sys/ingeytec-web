@@ -68,6 +68,7 @@
     .nav-menu ul {
       display: flex;
       gap: 35px;
+      align-items: center;
     }
 
     .nav-menu a {
@@ -187,7 +188,6 @@
 
     .feature-card:last-child { border-right: none; }
 
-    /* ¡CORRECCIÓN APLICADA AQUÍ! */
     .feature-icon {
       font-size: 32px;
       color: var(--text-light);
@@ -293,9 +293,11 @@
       </div>
       <nav class="nav-menu">
         <ul>
-          <li><a href="#" class="active">Inicio</a></li>
-          <li><a href="#">Nosotros</a></li>
-          <li><a href="#">Servicios</a></li>
+          <!-- MENÚ ACTUALIZADO Y CONECTADO -->
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="#">Servicios <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></a></li>
+          <li><a href="#">Alquiler de Equipos</a></li>
           <li><a href="#">Proyectos</a></li>
           <li><a href="#">Clientes</a></li>
           <li><a href="#">Blog</a></li>

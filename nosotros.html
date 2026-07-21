@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros - INGEYTEC</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-blue: #0b223f;
+      --medium-blue: #153b6b;
+      --light-blue: #8fa9c9;
+      --text-gray: #555555;
+      --text-light: #ffffff;
+      --bg-light: #fafafa;
+    }
+
+    * { box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; background-color: #ffffff; color: var(--text-gray); }
+    h1, h2, h3, h4 { font-weight: 700; margin: 0; color: var(--dark-blue); }
+    a { text-decoration: none; }
+    ul { list-style: none; padding: 0; margin: 0; }
+
+    /* HEADER (Igual al index) */
+    header { background-color: #ffffff; padding: 15px 0; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .container { max-width: 1300px; margin: 0 auto; padding: 0 20px; }
+    header .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo img { height: 60px; object-fit: contain; }
+    .nav-menu ul { display: flex; gap: 25px; align-items: center;}
+    .nav-menu a { font-size: 14px; font-weight: 600; color: var(--dark-blue); }
+    .nav-menu a.active { border-bottom: 2px solid var(--dark-blue); padding-bottom: 5px; }
+    .contact-box { background-color: var(--dark-blue); color: var(--text-light); padding: 12px 20px; border-radius: 6px; display: flex; align-items: center; gap: 15px; }
+    .contact-box i { font-size: 24px; }
+    .contact-details { text-align: left; }
+    .contact-details .label { font-size: 11px; font-weight: 500; display: block;}
+    .contact-details .phone { font-size: 16px; font-weight: 700; display: block;}
+
+    /* HERO SPLIT SECTION (Mitad azul, mitad foto) */
+    .hero-split { display: flex; margin-top: 90px; min-height: 500px; }
+    .hero-text-box { flex: 1; background-color: var(--dark-blue); color: white; padding: 60px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .hero-image-box { flex: 1; background-image: url('fondo-nosotros.png'); background-size: cover; background-position: center; }
+    
+    .breadcrumb { font-size: 12px; color: #b0c4de; margin-bottom: 40px; display: flex; gap: 10px; align-items: center;}
+    .breadcrumb a { color: #b0c4de; }
+    .hero-subtitle { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; color: #b0c4de;}
+    .hero-title { font-size: 48px; color: white; line-height: 1.1; margin-bottom: 25px; }
+    .hero-desc { font-size: 15px; line-height: 1.6; color: #e0e0e0; }
+
+    /* SECCIÓN ABOUT (3 Columnas) */
+    .about-section { display: flex; gap: 40px; margin: 80px auto; max-width: 1300px; padding: 0 20px; align-items: flex-start; }
+    
+    /* Columna 1: Foto equipo */
+    .about-img-col { flex: 1.2; position: relative; }
+    .about-img-col img { width: 100%; border-radius: 4px; display: block; }
+    .team-badge { position: absolute; bottom: 20px; left: 20px; background-color: var(--dark-blue); color: white; padding: 15px 20px; display: flex; align-items: center; gap: 15px; border-radius: 4px; }
+    .team-badge i { font-size: 24px; }
+    .team-badge h4 { color: white; font-size: 14px; margin-bottom: 3px; }
+    .team-badge p { font-size: 12px; margin: 0; color: #b0c4de;}
+
+    /* Columna 2: Texto Quiénes somos */
+    .about-text-col { flex: 1; }
+    .about-text-col h2 { font-size: 24px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;}
+    .about-text-col p { font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+
+    /* Columna 3: Estadísticas */
+    .about-stats-col { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; border-left: 1px solid #eee; padding-left: 30px;}
+    .stat-box { display: flex; flex-direction: column; gap: 10px; }
+    .stat-box-top { display: flex; align-items: center; gap: 15px; }
+    .stat-box-top i { font-size: 32px; color: var(--dark-blue); font-weight: 300;}
+    .stat-number { font-size: 28px; font-weight: 800; color: var(--dark-blue); }
+    .stat-text { font-size: 13px; color: var(--text-gray); line-height: 1.4; margin-top: -5px;}
+
+    /* SECCIÓN POR QUÉ ELEGIRNOS */
+    .why-choose { background-color: var(--bg-light); padding: 80px 20px; text-align: center; }
+    .why-title { font-size: 24px; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 1px; }
+    .why-title span { border-bottom: 2px solid var(--light-blue); padding-bottom: 5px; }
+    
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 20px; max-width: 1300px; margin: 0 auto; }
+    .why-card { background: white; border: 1px solid #eee; border-radius: 8px; padding: 30px 20px; text-align: left; }
+    .why-card-top { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+    .why-card-top i { font-size: 30px; color: var(--dark-blue); }
+    .why-card-top h4 { font-size: 14px; line-height: 1.3; }
+    .why-card p { font-size: 12px; line-height: 1.5; color: var(--text-gray); }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="logo.png" alt="INGEYTEC Logo">
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <!-- IMPORTANTE: Aquí conectamos el botón Inicio con tu index.html -->
+          <li><a href="index.html">Inicio</a></li>
+          <!-- El botón Nosotros ahora tiene la clase "active" (rayita azul) -->
+          <li><a href="nosotros.html" class="active">Nosotros</a></li>
+          <li><a href="#">Servicios <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></a></li>
+          <li><a href="#">Alquiler de Equipos</a></li>
+          <li><a href="#">Proyectos</a></li>
+          <li><a href="#">Clientes</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="contact-box">
+        <i class="fa-solid fa-headset"></i>
+        <div class="contact-details">
+          <span class="label">Atención 24/7</span>
+          <span class="phone">987 328 021</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECCIÓN HERO DIVIDIDA -->
+  <section class="hero-split">
+    <div class="hero-text-box">
+      <div class="breadcrumb">
+        <i class="fa-solid fa-house"></i> <a href="index.html">Inicio</a> <i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Nosotros
+      </div>
+      <div class="hero-subtitle">NOSOTROS</div>
+      <h1 class="hero-title">Ingeniería que<br>genera confianza</h1>
+      <p class="hero-desc">En INGEYTEC desarrollamos soluciones integrales de climatización para empresas, industrias, centros comerciales y proyectos especiales. Nuestro compromiso es garantizar ambientes confortables mediante ingeniería, tecnología y un equipo altamente especializado.</p>
+    </div>
+    <div class="hero-image-box">
+      <!-- La imagen de fondo se carga por CSS (fondo-nosotros.png) -->
+    </div>
+  </section>
+
+  <!-- SECCIÓN QUIÉNES SOMOS -->
+  <section class="about-section">
+    <div class="about-img-col">
+      <!-- Se requiere una foto del equipo llamada equipo.png -->
+      <img src="equipo.png" alt="Equipo Ingeyectec" onerror="this.src='https://via.placeholder.com/600x400/e0e0e0/555?text=Foto+del+Equipo'">
+      <div class="team-badge">
+        <i class="fa-regular fa-user"></i>
+        <div>
+          <h4>David Venegas</h4>
+          <p>Gerente General</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="about-text-col">
+      <h2>¿QUIÉNES SOMOS?</h2>
+      <p>Fundada en 2003, INGEYTEC nace respaldada por la experiencia de más de 20 años de su fundador en la gestión de grandes infraestructuras comerciales. En 2022, consolidamos el reinicio continuo de nuestras operaciones, posicionándonos firmemente en el mercado nacional.</p>
+      <p>Hoy, combinamos ingeniería, alianzas estratégicas con marcas líderes y un equipo técnico calificado para garantizar el máximo confort y la continuidad operativa de nuestros clientes.</p>
+    </div>
+
+    <div class="about-stats-col">
+      <div class="stat-box">
+        <div class="stat-box-top">
+          <i class="fa-regular fa-building"></i>
+          <span class="stat-number">+200</span>
+        </div>
+        <div class="stat-text">Proyectos<br>ejecutados</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-top">
+          <i class="fa-solid fa-user-group"></i>
+          <span class="stat-number">+50</span>
+        </div>
+        <div class="stat-text">Empresas<br>atendidas</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-top">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span class="stat-number">10</span>
+        </div>
+        <div class="stat-text">Regiones<br>atendidas</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-box-top">
+          <i class="fa-solid fa-headset"></i>
+          <span class="stat-number">24/7</span>
+        </div>
+        <div class="stat-text">Soporte<br>técnico</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN POR QUÉ ELEGIRNOS -->
+  <section class="why-choose">
+    <h2 class="why-title"><span>¿POR QUÉ</span> ELEGIR INGEYTEC?</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-top">
+          <i class="fa-solid fa-award"></i>
+          <h4>Ingeniería<br>especializada</h4>
+        </div>
+        <p>Soluciones HVAC-R diseñadas a la medida de cada proyecto.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-top">
+          <i class="fa-solid fa-helmet-safety"></i>
+          <h4>Técnicos<br>certificados</h4>
+        </div>
+        <p>Personal altamente capacitado y en constante formación.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-top">
+          <i class="fa-regular fa-clock"></i>
+          <h4>Atención<br>24/7</h4>
+        </div>
+        <p>Soporte técnico inmediato para emergencias y mantenimiento.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-top">
+          <i class="fa-solid fa-globe"></i>
+          <h4>Cobertura<br>nacional</h4>
+        </div>
+        <p>Presencia en las principales regiones del Perú.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-top">
+          <i class="fa-regular fa-handshake"></i>
+          <h4>Alianzas con<br>marcas líderes</h4>
+        </div>
+        <p>Trabajamos con las mejores marcas del mercado.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-top">
+          <i class="fa-solid fa-chart-line"></i>
+          <h4>Más de 200<br>proyectos</h4>
+        </div>
+        <p>Experiencia comprobada en proyectos de alto nivel.</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
