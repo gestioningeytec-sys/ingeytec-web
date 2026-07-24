@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>INGEYTEC - Aire Acondicionado y Refrigeración</title>
   <meta name="description" content="INGEYTEC - Soluciones integrales de aire acondicionado (HVAC) y refrigeración para empresas en todo el Perú. Instalación, mantenimiento y atención 24/7.">
+  <meta name="google-site-verification" content="TU_CODIGO_COPIADO_AQUI" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +18,7 @@
       --text-gray: #555555;
       --text-light: #ffffff;
       --bg-light: #fafafa;
+      --whatsapp-green: #25D366;
     }
 
     * { box-sizing: border-box; }
@@ -35,7 +37,7 @@
       color: var(--dark-blue);
     }
 
-    a { text-decoration: none; }
+    a { text-decoration: none; transition: color 0.3s; }
     ul { list-style: none; padding: 0; margin: 0; }
 
     .container {
@@ -44,7 +46,6 @@
       padding: 0 20px;
     }
 
-    /* HEADER */
     header {
       background-color: #ffffff;
       padding: 15px 0;
@@ -68,7 +69,7 @@
 
     .nav-menu ul {
       display: flex;
-      gap: 35px;
+      gap: 30px;
       align-items: center;
     }
 
@@ -76,6 +77,10 @@
       font-size: 14px;
       font-weight: 600;
       color: var(--dark-blue);
+    }
+
+    .nav-menu a:hover {
+      color: var(--medium-blue);
     }
 
     .nav-menu a.active {
@@ -99,7 +104,6 @@
     .contact-details .label { font-size: 11px; font-weight: 500; display: block;}
     .contact-details .phone { font-size: 16px; font-weight: 700; display: block;}
 
-    /* HERO SECTION */
     .hero {
       background-image: linear-gradient(to right, rgba(11, 34, 63, 0.9) 0%, rgba(11, 34, 63, 0.6) 50%, rgba(11, 34, 63, 0.1) 100%), url('fondo.png');
       background-size: cover;
@@ -150,12 +154,16 @@
       align-items: center;
       gap: 10px;
       cursor: pointer;
+      transition: background-color 0.3s;
     }
 
     .btn-primary {
       background-color: var(--medium-blue);
       color: var(--text-light);
-      border: none;
+      border: 1px solid var(--medium-blue);
+    }
+    .btn-primary:hover {
+      background-color: var(--dark-blue);
     }
 
     .btn-secondary {
@@ -163,8 +171,10 @@
       border: 1px solid rgba(255,255,255,0.5);
       color: var(--text-light);
     }
+    .btn-secondary:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
 
-    /* BARRA DE CARACTERÍSTICAS */
     .features {
       position: relative;
       margin-top: -60px;
@@ -207,9 +217,8 @@
       line-height: 1.4;
     }
 
-    /* SECCIÓN SERVICIOS */
     .services {
-      padding: 100px 0;
+      padding: 100px 0 80px;
       background-color: #ffffff;
       text-align: center;
     }
@@ -245,6 +254,7 @@
 
     .service-card:hover {
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transform: translateY(-5px);
     }
 
     .icon-wrapper {
@@ -283,6 +293,142 @@
       align-items: center;
       gap: 5px;
     }
+
+    .contact-footer {
+      background-color: var(--dark-blue);
+      color: var(--text-light);
+      padding: 40px 0;
+      font-size: 14px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .footer-info {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .info-item i {
+      font-size: 26px;
+      color: var(--text-light);
+    }
+
+    .info-item span {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    .info-item strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-social span {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-icons a {
+      background-color: var(--text-light);
+      color: var(--dark-blue);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    
+    .social-icons a:hover {
+      background-color: var(--light-blue);
+      color: white;
+    }
+
+    .copyright-bar {
+      background-color: #06182c; /* Azul aún más oscuro */
+      color: #8fa9c9;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 12px;
+    }
+
+    .social-sidebar {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--text-light);
+      padding: 15px 10px;
+      border-radius: 8px 0 0 8px;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 999;
+    }
+
+    .social-sidebar a {
+      color: var(--dark-blue);
+      font-size: 18px;
+      text-align: center;
+    }
+    .social-sidebar a:hover {
+      color: var(--medium-blue);
+    }
+
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--whatsapp-green);
+      color: var(--text-light);
+      padding: 12px 20px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-btn i {
+      font-size: 20px;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.05);
+      color: white;
+    }
   </style>
 </head>
 <body>
@@ -296,12 +442,13 @@
         <ul>
           <li><a href="index.html" class="active">Inicio</a></li>
           <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="#">Servicios <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></a></li>
-          <li><a href="#">Alquiler de Equipos</a></li>
-          <li><a href="#">Proyectos</a></li>
+          <li><a href="#">Servicios</a></li>
+          <!-- Menú actualizado con Cobertura y Cotizar -->
+          <li><a href="#">Cobertura</a></li>
           <li><a href="#">Clientes</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="#">Contacto</a></li>
+          <li><a href="#">Cotizar</a></li>
         </ul>
       </nav>
       <div class="contact-box">
@@ -314,6 +461,13 @@
     </div>
   </header>
 
+  <div class="social-sidebar">
+    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+
   <section class="hero">
     <div class="container">
       <div class="hero-subtitle">
@@ -324,7 +478,7 @@
       
       <div class="hero-buttons">
         <button class="btn btn-primary">Conoce nuestros servicios <i class="fa-solid fa-arrow-right"></i></button>
-        <button class="btn btn-secondary">Solicita una cotización <i class="fa-regular fa-file-lines"></i></button>
+        <button class="btn btn-secondary">Cotizar ahora <i class="fa-regular fa-file-lines"></i></button>
       </div>
     </div>
   </section>
@@ -397,6 +551,54 @@
       </div>
     </div>
   </section>
+
+  <footer class="contact-footer">
+    <div class="container footer-content">
+      
+      <div class="footer-info">
+        <div class="info-item">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <span>Teléfono:</span>
+            <strong>+51 970 774 772</strong>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fa-regular fa-envelope"></i>
+          <div>
+            <span>Correo:</span>
+            <strong>comercial@ingeytec.pe</strong>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <span>Dirección:</span>
+            <strong>Mz. I lote 5 Urb Angamos - Piura</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <span>Síguenos en:</span>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <div class="copyright-bar">
+    2026 &copy; INGEYTEC Todos los derechos reservados.
+  </div>
+
+  <a href="https://wa.me/51987328021" class="whatsapp-btn" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+  </a>
 
 </body>
 </html>
