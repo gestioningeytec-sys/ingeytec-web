@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios - INGEYTEC</title>
+  <meta name="description" content="Conoce todos los servicios de INGEYTEC: HVAC, Refrigeración Industrial, Alquiler de Equipos, Servicios Generales y Proyectos de Ingeniería.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-blue: #0b223f;
+      --medium-blue: #153b6b;
+      --light-blue: #2a75d3; /* Azul más vibrante para los textos resaltados */
+      --text-gray: #555555;
+      --text-light: #ffffff;
+      --bg-light: #fafafa;
+      --whatsapp-green: #25D366;
+    }
+
+    * { box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; background-color: #f8f9fb; color: var(--text-gray); }
+    h1, h2, h3, h4 { font-weight: 700; margin: 0; color: var(--dark-blue); }
+    a { text-decoration: none; transition: color 0.3s; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    .container { max-width: 1350px; margin: 0 auto; padding: 0 20px; }
+
+    header { background-color: #ffffff; padding: 15px 0; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    header .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo img { height: 60px; object-fit: contain; }
+    .nav-menu ul { display: flex; gap: 25px; align-items: center;}
+    .nav-menu a { font-size: 14px; font-weight: 600; color: var(--dark-blue); }
+    .nav-menu a:hover { color: var(--light-blue); }
+    .nav-menu a.active { border-bottom: 2px solid var(--dark-blue); padding-bottom: 5px; }
+    
+    .contact-box { background-color: var(--dark-blue); color: var(--text-light); padding: 12px 20px; border-radius: 6px; display: flex; align-items: center; gap: 15px; }
+    .contact-box i { font-size: 24px; }
+    .contact-details { text-align: left; }
+    .contact-details .label { font-size: 11px; font-weight: 500; display: block;}
+    .contact-details .phone { font-size: 16px; font-weight: 700; display: block;}
+
+    .hero-servicios {
+      /* Degrade oscuro a la izquierda que se desvanece a la derecha para ver la foto */
+      background-image: linear-gradient(to right, rgba(11, 34, 63, 1) 0%, rgba(11, 34, 63, 0.85) 45%, rgba(11, 34, 63, 0.2) 100%), url('fondo-servicios.png');
+      background-size: cover;
+      background-position: center;
+      padding: 180px 0 140px;
+      color: var(--text-light);
+      margin-top: 90px; /* Compensa el header fijo */
+    }
+
+    .hero-subtitle { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; color: var(--light-blue); }
+    .hero-title { font-size: 52px; font-weight: 800; line-height: 1.1; margin-bottom: 25px; max-width: 700px; }
+    .hero-title span { color: var(--light-blue); }
+    .hero-desc { font-size: 15px; line-height: 1.6; color: #e0e0e0; max-width: 550px; margin-bottom: 0; }
+
+    .features-bar {
+      max-width: 1100px;
+      margin: -50px auto 60px;
+      background-color: var(--medium-blue);
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      z-index: 10;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      padding: 10px 0;
+    }
+
+    .feature-item {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 25px 30px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      color: white;
+    }
+    .feature-item:last-child { border-right: none; }
+    .feature-item i { font-size: 32px; color: white; }
+    .feature-item p { margin: 0; font-size: 13px; font-weight: 600; line-height: 1.4; }
+
+    .services-catalog { padding: 40px 0 100px; text-align: center; }
+    .catalog-subtitle { font-size: 12px; font-weight: 600; color: var(--light-blue); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+    .catalog-title { font-size: 32px; margin-bottom: 50px; }
+    .catalog-title span { color: var(--light-blue); }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      text-align: left;
+    }
+
+    .service-card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      border: 1px solid #f0f0f0;
+    }
+
+    .service-img {
+      height: 140px;
+      width: 100%;
+      object-fit: cover;
+      background-color: #e0e0e0;
+    }
+
+    .icon-float {
+      width: 45px;
+      height: 45px;
+      background-color: var(--light-blue);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      position: absolute;
+      top: 115px; /* Mitad sobre la imagen, mitad sobre el fondo blanco */
+      left: 20px;
+      border: 3px solid white;
+    }
+
+    .service-content { padding: 40px 20px 25px; flex-grow: 1; display: flex; flex-direction: column;}
+    .service-content h3 { font-size: 16px; margin-bottom: 5px; }
+    .service-content h4 { font-size: 11px; font-weight: 500; color: var(--light-blue); margin-bottom: 15px; min-height: 26px;}
+    
+    .service-list { list-style: none; padding: 0; margin: 0 0 20px; flex-grow: 1;}
+    .service-list li {
+      font-size: 11px;
+      color: var(--text-gray);
+      line-height: 1.5;
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 15px;
+    }
+    .service-list li::before {
+      content: '\f00c'; /* Check de FontAwesome */
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: var(--dark-blue);
+      font-size: 10px;
+    }
+
+    .contact-footer { background-color: var(--dark-blue); color: var(--text-light); padding: 40px 0; font-size: 14px; }
+    .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
+    .footer-info { display: flex; gap: 40px; flex-wrap: wrap; }
+    .info-item { display: flex; align-items: center; gap: 15px; }
+    .info-item i { font-size: 26px; color: var(--text-light); }
+    .info-item span { font-size: 12px; opacity: 0.8; }
+    .info-item strong { display: block; font-size: 15px; font-weight: 600; margin-top: 3px; }
+    
+    .footer-social { display: flex; align-items: center; gap: 15px; }
+    .footer-social span { font-size: 13px; font-weight: 500; }
+    .social-icons { display: flex; gap: 10px; }
+    .social-icons a { background-color: transparent; color: var(--text-light); width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 16px; transition: all 0.3s ease; }
+    .social-icons a:hover { background-color: var(--light-blue); border-color: var(--light-blue); }
+    .copyright-bar { background-color: #06182c; color: #8fa9c9; text-align: center; padding: 15px 0; font-size: 12px; }
+
+    /* BOTÓN WHATSAPP */
+    .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background-color: var(--whatsapp-green); color: var(--text-light); padding: 12px 20px; border-radius: 50px; display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000; transition: transform 0.3s; }
+    .whatsapp-btn i { font-size: 20px; }
+    .whatsapp-btn:hover { transform: scale(1.05); color: white; }
+
+    /* Responsive básico */
+    @media (max-width: 1200px) {
+      .cards-grid { grid-template-columns: repeat(3, 1fr); }
+      .features-bar { flex-wrap: wrap; }
+      .feature-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); min-width: 45%;}
+    }
+    @media (max-width: 768px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="logo.png" alt="INGEYTEC Logo">
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="servicios.html" class="active">Servicios</a></li>
+          <li><a href="#">Cobertura</a></li>
+          <li><a href="#">Clientes</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Cotizar</a></li>
+        </ul>
+      </nav>
+      <div class="contact-box">
+        <i class="fa-solid fa-headset"></i>
+        <div class="contact-details">
+          <span class="label">Atención 24/7</span>
+          <span class="phone">987 328 021</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-servicios">
+    <div class="container">
+      <div class="hero-subtitle">NUESTROS SERVICIOS</div>
+      <h1 class="hero-title">Soluciones integrales<br>para <span>cada necesidad</span></h1>
+      <p class="hero-desc">Brindamos servicios especializados con altos estándares de calidad, tecnología de vanguardia y un equipo técnico certificado para garantizar el confort, la eficiencia y la continuidad operativa de tu negocio.</p>
+    </div>
+  </section>
+
+  <div class="features-bar">
+    <div class="feature-item">
+      <i class="fa-regular fa-circle-check"></i>
+      <p>Técnicos<br>certificados</p>
+    </div>
+    <div class="feature-item">
+      <i class="fa-solid fa-gear"></i>
+      <p>Equipos y herramientas<br>de última generación</p>
+    </div>
+    <div class="feature-item">
+      <i class="fa-solid fa-phone-volume"></i>
+      <p>Atención<br>24/7</p>
+    </div>
+    <div class="feature-item">
+      <i class="fa-solid fa-award"></i>
+      <p>Calidad que garantiza<br>tu tranquilidad</p>
+    </div>
+  </div>
+
+  <section class="services-catalog">
+    <div class="container">
+      <div class="catalog-subtitle">NUESTROS SERVICIOS</div>
+      <h2 class="catalog-title">Soluciones diseñadas <span>para ti</span></h2>
+      
+      <div class="cards-grid">
+        
+        <!-- Tarjeta 1: HVAC -->
+        <div class="service-card">
+          <img src="servicio-hvac.png" alt="HVAC" class="service-img" onerror="this.src='https://placehold.co/400x300/e0e0e0/555555?text=HVAC'">
+          <div class="icon-float"><i class="fa-regular fa-snowflake"></i></div>
+          <div class="service-content">
+            <h3>HVAC</h3>
+            <h4>Aire acondicionado y<br>ventilación mecánica</h4>
+            <ul class="service-list">
+              <!-- Requerimiento cumplido: Eliminada referencia a instalación VRV/VRF -->
+              <li>Instalación de equipos de climatización.</li>
+              <li>Mantenimiento preventivo y correctivo.</li>
+              <li>Sistemas de ventilación y extracción.</li>
+              <li>Optimización de eficiencia energética.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2: Refrigeración Industrial -->
+        <div class="service-card">
+          <img src="servicio-refrigeracion.png" alt="Refrigeración Industrial" class="service-img" onerror="this.src='https://placehold.co/400x300/e0e0e0/555555?text=Refrigeracion'">
+          <div class="icon-float"><i class="fa-solid fa-asterisk"></i></div>
+          <div class="service-content">
+            <h3>Refrigeración Industrial</h3>
+            <h4>Instalación de Cámaras Frigoríficas</h4>
+            <ul class="service-list">
+              <li>Diseño e instalación de cámaras frigoríficas.</li>
+              <li>Equipos de refrigeración comercial e industrial.</li>
+              <li>Asesoría y soporte técnico especializado.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3: Alquiler de Equipos -->
+        <div class="service-card">
+          <img src="servicio-alquiler.png" alt="Alquiler de Equipos" class="service-img" onerror="this.src='https://placehold.co/400x300/e0e0e0/555555?text=Alquiler'">
+          <div class="icon-float"><i class="fa-solid fa-box-archive"></i></div>
+          <div class="service-content">
+            <h3>Alquiler de Equipos</h3>
+            <h4>Aire Acondicionado</h4>
+            <ul class="service-list">
+              <li>Equipos portátiles y Split.</li>
+              <li>Equipos para eventos y proyectos.</li>
+              <li>Alquiler por días, semanas o meses.</li>
+              <li>Entrega e instalación incluida.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tarjeta 4: Servicios Generales -->
+        <div class="service-card">
+          <img src="servicio-generales.png" alt="Servicios Generales" class="service-img" onerror="this.src='https://placehold.co/400x300/e0e0e0/555555?text=Servicios+Grales'">
+          <div class="icon-float"><i class="fa-solid fa-hard-hat"></i></div>
+          <div class="service-content">
+            <h3>Servicios Generales</h3>
+            <h4>Soluciones para tu infraestructura</h4>
+            <ul class="service-list">
+              <li>Pintura en general.</li>
+              <li>Carpintería y melamine.</li>
+              <li>Drywall y tabiquería.</li>
+              <li>Instalaciones sanitarias.</li>
+              <li>Mantenimiento y reparaciones.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tarjeta 5: Proyectos e Ingenieria -->
+        <div class="service-card">
+          <img src="servicio-proyectos.png" alt="Proyectos e Ingenieria" class="service-img" onerror="this.src='https://placehold.co/400x300/e0e0e0/555555?text=Proyectos'">
+          <div class="icon-float"><i class="fa-solid fa-ruler-combined"></i></div>
+          <div class="service-content">
+            <h3>Proyectos e Ingenieria</h3>
+            <h4>Instalaciones de Cero</h4>
+            <ul class="service-list">
+              <li>Diseño y cálculo de sistemas de aire acondicionado.</li>
+              <li>Instalación de proyectos desde cero.</li>
+              <li>Gestión y ejecución de proyectos.</li>
+              <li>Soluciones a medida.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="contact-footer">
+    <div class="container footer-content">
+      
+      <div class="footer-info">
+        <div class="info-item">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <span>Teléfono:</span>
+            <strong>+51 970 774 772</strong>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fa-regular fa-envelope"></i>
+          <div>
+            <span>Correo:</span>
+            <strong>comercial@ingeytec.pe</strong>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <span>Dirección:</span>
+            <strong>Mz. I lote 5 Urb Angamos - Piura</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <span>Síguenos en:</span>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <div class="copyright-bar">
+    2026 &copy; INGEYTEC Todos los derechos reservados.
+  </div>
+
+  <a href="https://wa.me/51987328021" class="whatsapp-btn" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+  </a>
+
+</body>
+</html>
