@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - INGEYTEC</title>
+  <meta name="description" content="Ponte en contacto con INGEYTEC para solicitar una cotización o asesoría en sistemas de aire acondicionado y refrigeración.">
+  <meta property="og:site_name" content="INGEYTEC">
+  <meta property="og:title" content="Contacto - INGEYTEC">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --dark-blue: #0b223f;
+      --medium-blue: #153b6b;
+      --light-blue: #2a75d3; /* Azul vibrante */
+      --cyan-blue: #3b82f6; /* Para textos destacados en fondo oscuro */
+      --text-gray: #555555;
+      --text-light: #ffffff;
+      --bg-light: #f8fafc;
+      --whatsapp-green: #25D366;
+      --input-bg: #ffffff;
+      --input-border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; background-color: #ffffff; color: var(--text-gray); overflow-x: hidden;}
+    h1, h2, h3, h4, h5 { font-weight: 700; margin: 0; color: var(--dark-blue); }
+    a { text-decoration: none; transition: 0.3s; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    .container { max-width: 1350px; margin: 0 auto; padding: 0 20px; }
+
+    /* HEADER */
+    header { background-color: #ffffff; padding: 15px 0; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    header .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo img { height: 60px; object-fit: contain; }
+    .nav-menu ul { display: flex; gap: 25px; align-items: center;}
+    .nav-menu a { font-size: 14px; font-weight: 600; color: var(--dark-blue); }
+    .nav-menu a:hover { color: var(--light-blue); }
+    .nav-menu a.active { border-bottom: 2px solid var(--dark-blue); padding-bottom: 5px; }
+    
+    .contact-box { background-color: var(--dark-blue); color: var(--text-light); padding: 12px 20px; border-radius: 6px; display: flex; align-items: center; gap: 15px; }
+    .contact-box i { font-size: 24px; }
+    .contact-details { text-align: left; }
+    .contact-details .label { font-size: 11px; font-weight: 500; display: block;}
+    .contact-details .phone { font-size: 16px; font-weight: 700; display: block;}
+
+    /* MAIN CONTACT SECTION - SPLIT LAYOUT */
+    .contact-split {
+      display: flex;
+      margin-top: 90px; /* Offset for fixed header */
+      min-height: calc(100vh - 90px);
+    }
+
+    /* Lado Izquierdo - Formulario (Azul oscuro) */
+    .contact-left {
+      flex: 1;
+      background: linear-gradient(135deg, rgba(11,34,63,0.95) 0%, rgba(11,34,63,0.95) 100%), url('fondo-contacto-form.jpg') center/cover;
+      padding: 80px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .form-subtitle { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; color: var(--cyan-blue); }
+    .form-title { font-size: 42px; font-weight: 800; line-height: 1.1; margin-bottom: 20px; color: white; }
+    .form-title span { color: var(--cyan-blue); }
+    .form-desc { font-size: 15px; line-height: 1.6; color: #e2e8f0; margin-bottom: 40px; }
+
+    .custom-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 15px 20px;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      background-color: var(--input-bg);
+      color: var(--text-gray);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    .form-control:focus { outline: none; border-color: var(--cyan-blue); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); }
+    .form-control::placeholder { color: #a0aec0; }
+
+    select.form-control {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23555555%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat, repeat;
+      background-position: right .7em top 50%, 0 0;
+      background-size: .65em auto, 100%;
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn-submit {
+      background-color: var(--cyan-blue);
+      color: white;
+      border: none;
+      padding: 16px 20px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: background-color 0.3s, transform 0.2s;
+      width: 100%;
+      margin-top: 10px;
+    }
+    .btn-submit:hover { background-color: #2563eb; transform: translateY(-2px); }
+    
+    .privacy-notice {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 11px;
+      color: #b0c4de;
+      margin-top: 15px;
+    }
+
+    /* Lado Derecho - Info (Gris claro / Blanco con imagen de fondo) */
+    .contact-right {
+      flex: 1;
+      background: linear-gradient(to left, rgba(248,250,252,0.6) 0%, rgba(248,250,252,0.95) 60%, rgba(248,250,252,1) 100%), url('fondo-contacto-info.jpg') right center/cover;
+      padding: 80px 80px 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .info-subtitle { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; color: var(--light-blue); }
+    .info-title { font-size: 42px; font-weight: 800; line-height: 1.1; margin-bottom: 20px; color: var(--dark-blue); }
+    .info-title span { color: var(--light-blue); }
+    .info-desc { font-size: 14px; line-height: 1.6; color: var(--text-gray); margin-bottom: 40px; max-width: 90%; }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .method-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .method-icon {
+      width: 50px; height: 50px;
+      background-color: var(--dark-blue);
+      color: white;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .method-text .label { font-size: 12px; font-weight: 600; color: var(--dark-blue); margin-bottom: 5px; display: block; }
+    .method-text .value { font-size: 15px; color: var(--text-gray); font-weight: 500;}
+
+    .emergency-box {
+      background-color: #f0f4f8;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+    .em-content { flex: 1; display: flex; align-items: flex-start; gap: 15px;}
+    .em-icon { font-size: 32px; color: var(--light-blue); }
+    .em-text h4 { font-size: 14px; color: var(--dark-blue); margin-bottom: 5px; }
+    .em-text p { font-size: 11px; margin: 0; color: var(--text-gray); line-height: 1.4; }
+    .em-badge { background-color: var(--dark-blue); color: white; border-radius: 6px; padding: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+    .em-badge i { font-size: 24px; }
+
+
+    /* SECCIÓN DE BENEFICIOS INFERIOR */
+    .benefits-bar {
+      background-color: #ffffff;
+      padding: 50px 0;
+      border-top: 1px solid #f0f0f0;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      border-right: 1px solid #f0f0f0;
+      padding-right: 20px;
+    }
+    .benefit-item:last-child { border-right: none; padding-right: 0; }
+    
+    .ben-icon { color: var(--light-blue); font-size: 32px; flex-shrink: 0; }
+    .ben-text h4 { font-size: 14px; color: var(--dark-blue); margin-bottom: 5px; }
+    .ben-text p { font-size: 12px; margin: 0; color: var(--text-gray); line-height: 1.4; }
+
+
+    /* FOOTER SIMPLE */
+    .footer-simple {
+      background-color: var(--dark-blue);
+      color: white;
+      padding: 25px 0;
+    }
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1350px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .social-follow { display: flex; align-items: center; gap: 15px; }
+    .social-follow span { font-size: 13px; color: #b0c4de;}
+    .social-icons a { color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 50%; width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; margin-left: 5px; transition: 0.3s;}
+    .social-icons a:hover { background-color: var(--light-blue); border-color: var(--light-blue); }
+    
+    .copyright { text-align: center; font-size: 12px; color: #b0c4de; flex: 1; }
+
+    /* BOTÓN WHATSAPP FLOTANTE */
+    .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background-color: var(--whatsapp-green); color: white; padding: 12px 20px; border-radius: 30px; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 1000; transition: transform 0.3s; }
+    .whatsapp-btn i { font-size: 20px; }
+    .whatsapp-btn:hover { transform: translateY(-5px); color: white; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .contact-split { flex-direction: column; }
+      .contact-left, .contact-right { padding: 60px 40px; }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+      .benefit-item:nth-child(2) { border-right: none; padding-right: 0;}
+    }
+    @media (max-width: 768px) {
+      .form-row { flex-direction: column; gap: 20px; }
+      .contact-left, .contact-right { padding: 40px 20px; }
+      .form-title, .info-title { font-size: 36px; }
+      .footer-grid { flex-direction: column; gap: 20px; text-align: center; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .benefit-item { border-right: none; padding-right: 0; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0;}
+      .benefit-item:last-child { border-bottom: none; padding-bottom: 0;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="logo.png" alt="INGEYTEC Logo">
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="cobertura.html">Cobertura</a></li>
+          <li><a href="clientes.html">Clientes</a></li>
+          <li><a href="contacto.html" class="active">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="contact-box">
+        <i class="fa-solid fa-headset"></i>
+        <div class="contact-details">
+          <span class="label">Atención 24/7</span>
+          <span class="phone">987 328 021</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTACT SECTION -->
+  <section class="contact-split">
+    
+    <!-- LADO IZQUIERDO: FORMULARIO -->
+    <div class="contact-left">
+      <div class="form-subtitle">COTIZA CON NOSOTROS</div>
+      <h1 class="form-title">Cuéntanos tu proyecto<br>y te enviaremos una<br>propuesta <span>a medida</span></h1>
+      <p class="form-desc">Completa el formulario y uno de nuestros asesores se comunicará contigo para entender tus necesidades y ofrecerte la mejor solución.</p>
+      
+      <!-- INICIO DEL FORMULARIO CON FORMSUBMIT -->
+      <!-- Acción apunta al correo principal comercial@ingeytec.pe -->
+      <form action="https://formsubmit.co/comercial@ingeytec.pe" method="POST" class="custom-form">
+        
+        <!-- Opciones avanzadas de FormSubmit (Ocultas) -->
+        <!-- 1. Enviar copia (CC) al segundo correo -->
+        <input type="hidden" name="_cc" value="ingeytec@ingeytec.pe">
+        <!-- 2. Asunto del correo -->
+        <input type="hidden" name="_subject" value="Nueva Solicitud de Cotización - INGEYTEC WEB">
+        <!-- 3. Desactivar reCAPTCHA para que sea directo (opcional, puedes borrarlo si recibes spam) -->
+        <input type="hidden" name="_captcha" value="false">
+        <!-- 4. Página de agradecimiento (por defecto FormSubmit muestra una propia, si creas un html de gracias, pon su URL aquí) -->
+        <!-- <input type="hidden" name="_next" value="https://tudominio.com/gracias.html"> -->
+
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" name="Nombre" class="form-control" placeholder="Nombre completo*" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="Empresa" class="form-control" placeholder="Empresa">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <input type="email" name="Correo" class="form-control" placeholder="Correo electrónico*" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" name="Telefono" class="form-control" placeholder="Teléfono / WhatsApp*" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <select name="Tipo de Servicio" class="form-control" required>
+            <option value="" disabled selected hidden>Tipo de servicio requerido*</option>
+            <option value="Mantenimiento">Mantenimiento</option>
+            <option value="Compra">Compra</option>
+            <option value="Instalación Proyecto">Instalación Proyecto</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <textarea name="Mensaje" class="form-control" placeholder="Cuéntanos sobre tu proyecto o requerimiento*&#10;Describe brevemente el servicio que necesitas, ubicación, equipos involucrados, fechas estimadas, etc." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          <i class="fa-regular fa-paper-plane"></i> ENVIAR SOLICITUD DE COTIZACIÓN
+        </button>
+
+        <div class="privacy-notice">
+          <i class="fa-solid fa-lock"></i>
+          <span>Tu información está segura. No compartimos tus datos.</span>
+        </div>
+
+      </form>
+      <!-- FIN DEL FORMULARIO -->
+
+    </div>
+
+    <!-- LADO DERECHO: INFO DE CONTACTO -->
+    <div class="contact-right">
+      <div class="info-subtitle">CONTÁCTANOS</div>
+      <h2 class="info-title">Estamos <span>para ayudarte</span><br>en cada paso</h2>
+      <p class="info-desc">Nuestro equipo está listo para brindarte asesoría especializada y soluciones eficientes para tu negocio.</p>
+      
+      <div class="contact-methods">
+        <div class="method-item">
+          <div class="method-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="method-text">
+            <span class="label">Teléfono / WhatsApp</span>
+            <span class="value">+51 970 774 772</span>
+          </div>
+        </div>
+        
+        <div class="method-item">
+          <div class="method-icon"><i class="fa-regular fa-envelope"></i></div>
+          <div class="method-text">
+            <span class="label">Correo</span>
+            <span class="value">comercial@ingeytec.pe</span>
+          </div>
+        </div>
+        
+        <div class="method-item">
+          <div class="method-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="method-text">
+            <span class="label">Dirección</span>
+            <span class="value">Mz. I lote 5 Urb Angamos - Piura</span>
+          </div>
+        </div>
+        
+        <div class="method-item">
+          <div class="method-icon"><i class="fa-regular fa-clock"></i></div>
+          <div class="method-text">
+            <span class="label">Horario de atención</span>
+            <span class="value">Lunes a Viernes: 8:30 a.m. - 6:00 p.m.<br>Sábados: 8:30 a.m. - 12:00 p.m.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="emergency-box">
+        <div class="em-content">
+          <div class="em-icon"><i class="fa-solid fa-headset"></i></div>
+          <div class="em-text">
+            <h4>Atención 24/7 para emergencias</h4>
+            <p>Contamos con soporte técnico permanente para garantizar la continuidad de tus operaciones.</p>
+          </div>
+        </div>
+        <div class="em-badge">
+          <i class="fa-solid fa-phone-volume"></i>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE BENEFICIOS INFERIOR -->
+  <section class="benefits-bar">
+    <div class="container">
+      <div class="benefits-grid">
+        
+        <div class="benefit-item">
+          <div class="ben-icon"><i class="fa-solid fa-bolt"></i></div>
+          <div class="ben-text">
+            <h4>Respuesta rápida</h4>
+            <p>Te contactamos en menos de 24 horas.</p>
+          </div>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="ben-icon"><i class="fa-solid fa-user-group"></i></div>
+          <div class="ben-text">
+            <h4>Asesoría especializada</h4>
+            <p>Ingenieros y técnicos listos para entender tu necesidad.</p>
+          </div>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="ben-icon"><i class="fa-solid fa-certificate"></i></div>
+          <div class="ben-text">
+            <h4>Soluciones a medida</h4>
+            <p>Diseñamos la mejor propuesta para tu proyecto.</p>
+          </div>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="ben-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="ben-text">
+            <h4>Compromiso y calidad</h4>
+            <p>Garantizamos cada trabajo con los más altos estándares.</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER SIMPLE -->
+  <footer class="footer-simple">
+    <div class="footer-grid">
+      <div class="social-follow">
+        <span>Síguenos en:</span>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        2026 &copy; INGEYTEC Todos los derechos reservados.
+      </div>
+      
+      <!-- Div vacío para equilibrar el grid -->
+      <div style="flex:1;"></div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/51970774772" class="whatsapp-btn" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+  </a>
+
+</body>
+</html>
