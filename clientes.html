@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clientes - INGEYTEC</title>
+  <meta name="description" content="Empresas líderes confían en INGEYTEC para sus soluciones HVAC. Conoce nuestros clientes de los sectores industrial, comercial, corporativo y salud.">
+  
+  <meta property="og:site_name" content="INGEYTEC">
+  <meta property="og:title" content="Clientes - INGEYTEC">
+  <meta property="og:type" content="website">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "INGEYTEC",
+    "url": "https://gestioningeytec-sys.github.io/ingeytec-web/"
+  }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --dark-blue: #0b223f;
+      --medium-blue: #153b6b;
+      --light-blue: #2a75d3;
+      --cyan-blue: #3b82f6; /* Para el texto celeste brillante */
+      --text-gray: #555555;
+      --text-light: #ffffff;
+      --bg-light: #ffffff; /* Fondo base blanco */
+      --whatsapp-green: #25D366;
+    }
+
+    * { box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-gray); overflow-x: hidden;}
+    h1, h2, h3, h4, h5 { font-weight: 700; margin: 0; color: var(--dark-blue); }
+    a { text-decoration: none; transition: 0.3s; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    .container { max-width: 1350px; margin: 0 auto; padding: 0 20px; }
+
+    /* HEADER */
+    header { background-color: #ffffff; padding: 15px 0; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    header .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo img { height: 60px; object-fit: contain; }
+    .nav-menu ul { display: flex; gap: 25px; align-items: center;}
+    .nav-menu a { font-size: 14px; font-weight: 600; color: var(--dark-blue); }
+    .nav-menu a:hover { color: var(--light-blue); }
+    .nav-menu a.active { border-bottom: 2px solid var(--dark-blue); padding-bottom: 5px; }
+    
+    .contact-box { background-color: var(--dark-blue); color: var(--text-light); padding: 12px 20px; border-radius: 6px; display: flex; align-items: center; gap: 15px; }
+    .contact-box i { font-size: 24px; }
+    .contact-details { text-align: left; }
+    .contact-details .label { font-size: 11px; font-weight: 500; display: block;}
+    .contact-details .phone { font-size: 16px; font-weight: 700; display: block;}
+
+    /* HERO CLIENTES (DIAGONAL SPLIT) */
+    .hero-clientes {
+      position: relative;
+      margin-top: 90px; /* Offset header */
+      min-height: 550px;
+      display: flex;
+      background: url('fondo-clientes.jpg') no-repeat center right;
+      background-size: cover;
+    }
+    
+    /* Capa azul con corte diagonal */
+    .hero-blue-overlay {
+      width: 60%;
+      background-color: var(--dark-blue);
+      /* clip-path crea el corte en diagonal a la derecha */
+      clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+      padding: 80px 15% 60px 80px; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: white;
+    }
+
+    .hero-subtitle { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; color: #8fa9c9; }
+    .hero-title { font-size: 52px; font-weight: 800; line-height: 1.1; margin-bottom: 25px; color: white; text-transform: uppercase; }
+    .hero-title span { color: var(--cyan-blue); }
+    .hero-desc { font-size: 15px; line-height: 1.6; color: #e2e8f0; margin-bottom: 15px; max-width: 95%; }
+    .hero-desc strong { font-size: 16px; color: white; display: block; margin-top: 10px; }
+
+    /* Stats Line inside Hero */
+    .hero-stats {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      margin-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 30px;
+    }
+    .stat-item {
+      flex: 1;
+      border-right: 1px solid rgba(255,255,255,0.2);
+      padding-right: 20px;
+    }
+    .stat-item:last-child { border-right: none; padding-right: 0; }
+    .stat-icon { font-size: 28px; color: var(--cyan-blue); margin-bottom: 10px; }
+    .stat-number { font-size: 26px; font-weight: 800; color: white; line-height: 1; margin-bottom: 5px; }
+    .stat-text { font-size: 11px; line-height: 1.3; color: #b0c4de; }
+
+    /* LÍNEAS DE TÍTULO (Decorativas) */
+    .title-with-lines {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      color: var(--cyan-blue);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+    .title-with-lines::before, .title-with-lines::after {
+      content: '';
+      height: 1px;
+      background-color: var(--cyan-blue);
+      flex: 0 1 80px; /* Ancho de la línea */
+    }
+
+    /* CARRUSEL INFINITO DE LOGOS (NUEVO) */
+    .logos-section { 
+      padding: 80px 0 60px; 
+      text-align: center; 
+      overflow: hidden; /* Oculta lo que sale de la pantalla */
+      background-color: var(--bg-light);
+    }
+    
+    .marquee-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px; /* Espacio entre las dos filas */
+      width: 100vw;
+      max-width: 100%;
+      position: relative;
+    }
+
+    /* Efecto de desvanecimiento a los lados (Opcional, pero se ve muy profesional) */
+    .marquee-container::before, .marquee-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .marquee-container::before {
+      left: 0;
+      background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    }
+    .marquee-container::after {
+      right: 0;
+      background: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 20px;
+      /* La animación base */
+      animation: scroll 40s linear infinite;
+    }
+
+    /* Fila 2: Moviéndose en dirección contraria */
+    .marquee-track.reverse {
+      animation: scroll-reverse 45s linear infinite;
+    }
+    
+    /* Pausar la animación al pasar el mouse por encima */
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* Animaciones Keyframes */
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); } /* -50% porque duplicamos el contenido */
+    }
+    
+    @keyframes scroll-reverse {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+
+    .logo-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      width: 180px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      flex-shrink: 0; /* Evita que las tarjetas se aplasten */
+    }
+    
+    .logo-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      border-color: var(--cyan-blue);
+    }
+    
+    .logo-card img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      /* Hacer los logos grises hasta que se pase el mouse (Opcional, dale un toque más premium) */
+      filter: grayscale(100%) opacity(0.7);
+      transition: filter 0.3s;
+    }
+    
+    .logo-card:hover img {
+      filter: grayscale(0%) opacity(1);
+    }
+
+    /* SECCIÓN DE SECTORES (BANNER AZUL) */
+    .sectores-section { padding: 40px 20px 80px; }
+    .sectores-banner {
+      background-color: var(--dark-blue);
+      border-radius: 12px;
+      padding: 50px 40px;
+      max-width: 1350px;
+      margin: 0 auto;
+      box-shadow: 0 15px 35px rgba(11, 34, 63, 0.15);
+    }
+    .sectores-banner .title-with-lines { margin-bottom: 50px; }
+    
+    .sectores-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 25px;
+    }
+    .sector-item { display: flex; align-items: flex-start; gap: 15px; color: white; }
+    .sector-icon {
+      width: 45px; height: 45px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 18px;
+      color: white;
+    }
+    .sector-text h4 { font-size: 12px; color: white; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.5px;}
+    .sector-text p { font-size: 11px; margin: 0; color: #b0c4de; line-height: 1.3;}
+
+    /* FOOTER */
+    .footer-contact { background-color: var(--dark-blue); color: white; padding: 40px 0 20px; border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-grid { display: grid; grid-template-columns: auto auto auto 1fr; gap: 30px; align-items: center; max-width: 1300px; margin: 0 auto; padding: 0 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 30px; margin-bottom: 20px; }
+    .contact-item { display: flex; align-items: center; gap: 15px; }
+    .contact-item i { font-size: 24px; color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;}
+    .contact-item-text span { display: block; font-size: 12px; color: #b0c4de; margin-bottom: 3px;}
+    .contact-item-text strong { font-size: 14px; font-weight: 500; }
+    
+    .social-follow { text-align: right; display: flex; align-items: center; justify-content: flex-end; gap: 15px; }
+    .social-follow span { font-size: 13px; }
+    .social-icons a { color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 50%; width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; margin-left: 5px; transition: 0.3s;}
+    .social-icons a:hover { background-color: var(--cyan-blue); border-color: var(--cyan-blue); }
+    .copyright { text-align: center; font-size: 12px; color: #b0c4de; }
+
+    /* BOTÓN WHATSAPP FLOTANTE */
+    .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background-color: var(--whatsapp-green); color: white; padding: 12px 20px; border-radius: 30px; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 1000; transition: transform 0.3s; }
+    .whatsapp-btn i { font-size: 20px; }
+    .whatsapp-btn:hover { transform: translateY(-5px); color: white; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      .hero-blue-overlay { width: 70%; clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%); padding-left: 40px; }
+      .sectores-grid { grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    }
+    @media (max-width: 992px) {
+      .hero-clientes { background: var(--dark-blue); } /* Anula la foto de fondo en móvil para legibilidad */
+      .hero-blue-overlay { width: 100%; clip-path: none; padding: 60px 20px; }
+      .hero-title { font-size: 40px; }
+      .hero-stats { flex-wrap: wrap; }
+      .stat-item { min-width: 45%; margin-bottom: 20px; border-right: none; }
+      .footer-grid { grid-template-columns: 1fr; text-align: left; }
+      .social-follow { justify-content: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .sectores-grid { grid-template-columns: 1fr; }
+      .stat-item { min-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="logo.png" alt="INGEYTEC Logo">
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="cobertura.html">Cobertura</a></li>
+          <li><a href="clientes.html" class="active">Clientes</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Cotizar</a></li>
+        </ul>
+      </nav>
+      <div class="contact-box">
+        <i class="fa-solid fa-headset"></i>
+        <div class="contact-details">
+          <span class="label">Atención 24/7</span>
+          <span class="phone">987 328 021</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-clientes">
+    <div class="hero-blue-overlay">
+      <div class="hero-subtitle">NUESTROS CLIENTES</div>
+      <h1 class="hero-title">Confianza que<br><span>nos impulsa</span></h1>
+      
+      <p class="hero-desc">Trabajamos junto a empresas líderes de diversos sectores, brindando soluciones HVAC y de refrigeración que garantizan confort, eficiencia y continuidad operativa.</p>
+      <p class="hero-desc"><strong>Su confianza, nuestra mejor garantía.</strong></p>
+      
+      <!-- Barra de estadísticas -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fa-solid fa-users-gear"></i></div>
+          <div class="stat-number">+100</div>
+          <div class="stat-text">Clientes<br>satisfechos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fa-regular fa-building"></i></div>
+          <div class="stat-number">+300</div>
+          <div class="stat-text">Proyectos<br>ejecutados</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="stat-number">+15</div>
+          <div class="stat-text">Años de experiencia<br>respaldándonos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fa-regular fa-handshake"></i></div>
+          <div class="stat-number" style="font-size: 20px; line-height: 26px;">Alianzas</div>
+          <div class="stat-text">que construyen<br>futuro</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARRUSEL DINÁMICO DE LOGOS -->
+  <section class="logos-section">
+    <div class="container">
+      <div class="title-with-lines">Empresas que confían en nosotros</div>
+    </div>
+    
+    <div class="marquee-container">
+      
+      <!-- FILA 1: Movimiento hacia la izquierda -->
+      <!-- IMPORTANTE: Para que el loop sea infinito sin cortes, el contenido debe estar duplicado dentro de la misma pista -->
+      <div class="marquee-track">
+        <!-- GRUPO A (Original) -->
+        <div class="logo-card"><img src="logo-smartfit.png" alt="Smart Fit" onerror="this.src='https://placehold.co/120x60/fff/333?text=Smart+Fit'"></div>
+        <div class="logo-card"><img src="logo-imp.png" alt="IMP" onerror="this.src='https://placehold.co/120x60/fff/333?text=IMP'"></div>
+        <div class="logo-card"><img src="logo-falabella.png" alt="Falabella" onerror="this.src='https://placehold.co/120x60/fff/333?text=Falabella'"></div>
+        <div class="logo-card"><img src="logo-urbanplaza.png" alt="Urban Plaza" onerror="this.src='https://placehold.co/120x60/fff/333?text=Urban+Plaza'"></div>
+        <div class="logo-card"><img src="logo-tierraviva.png" alt="Tierra Viva" onerror="this.src='https://placehold.co/120x60/fff/333?text=Tierra+Viva'"></div>
+        <div class="logo-card"><img src="logo-holidayinn.png" alt="Holiday Inn" onerror="this.src='https://placehold.co/120x60/fff/333?text=Holiday+Inn'"></div>
+        <div class="logo-card"><img src="logo-realplaza.png" alt="Real Plaza" onerror="this.src='https://placehold.co/120x60/fff/333?text=Real+Plaza'"></div>
+        <div class="logo-card"><img src="logo-rodasur.png" alt="Rodasur" onerror="this.src='https://placehold.co/120x60/fff/333?text=Rodasur'"></div>
+        <div class="logo-card"><img src="logo-blexim.png" alt="Blexim" onerror="this.src='https://placehold.co/120x60/fff/333?text=Blexim'"></div>
+        
+        <!-- GRUPO A (Duplicado para el efecto infinito) -->
+        <div class="logo-card"><img src="logo-smartfit.png" alt="Smart Fit" onerror="this.src='https://placehold.co/120x60/fff/333?text=Smart+Fit'"></div>
+        <div class="logo-card"><img src="logo-imp.png" alt="IMP" onerror="this.src='https://placehold.co/120x60/fff/333?text=IMP'"></div>
+        <div class="logo-card"><img src="logo-falabella.png" alt="Falabella" onerror="this.src='https://placehold.co/120x60/fff/333?text=Falabella'"></div>
+        <div class="logo-card"><img src="logo-urbanplaza.png" alt="Urban Plaza" onerror="this.src='https://placehold.co/120x60/fff/333?text=Urban+Plaza'"></div>
+        <div class="logo-card"><img src="logo-tierraviva.png" alt="Tierra Viva" onerror="this.src='https://placehold.co/120x60/fff/333?text=Tierra+Viva'"></div>
+        <div class="logo-card"><img src="logo-holidayinn.png" alt="Holiday Inn" onerror="this.src='https://placehold.co/120x60/fff/333?text=Holiday+Inn'"></div>
+        <div class="logo-card"><img src="logo-realplaza.png" alt="Real Plaza" onerror="this.src='https://placehold.co/120x60/fff/333?text=Real+Plaza'"></div>
+        <div class="logo-card"><img src="logo-rodasur.png" alt="Rodasur" onerror="this.src='https://placehold.co/120x60/fff/333?text=Rodasur'"></div>
+        <div class="logo-card"><img src="logo-blexim.png" alt="Blexim" onerror="this.src='https://placehold.co/120x60/fff/333?text=Blexim'"></div>
+      </div>
+
+      <!-- FILA 2: Movimiento hacia la derecha (Clase reverse añadida) -->
+      <div class="marquee-track reverse">
+        <!-- GRUPO B (Original) -->
+        <div class="logo-card"><img src="logo-tinka.png" alt="Tinka" onerror="this.src='https://placehold.co/120x60/fff/333?text=Tinka'"></div>
+        <div class="logo-card"><img src="logo-bcp.png" alt="BCP" onerror="this.src='https://placehold.co/120x60/fff/333?text=BCP'"></div>
+        <div class="logo-card"><img src="logo-gorepiura.png" alt="Gobierno Regional de Piura" onerror="this.src='https://placehold.co/120x60/fff/333?text=GORE+Piura'"></div>
+        <div class="logo-card"><img src="logo-sodexo.png" alt="Sodexo" onerror="this.src='https://placehold.co/120x60/fff/333?text=Sodexo'"></div>
+        <div class="logo-card"><img src="logo-hotelluoxo.png" alt="Hotel Luoxo" onerror="this.src='https://placehold.co/120x60/fff/333?text=Hotel+Luoxo'"></div>
+        <div class="logo-card"><img src="logo-coinreivic.png" alt="Coinreivic" onerror="this.src='https://placehold.co/120x60/fff/333?text=Coinreivic'"></div>
+        <div class="logo-card"><img src="logo-unp.png" alt="Universidad Nacional de Piura" onerror="this.src='https://placehold.co/120x60/fff/333?text=UNP'"></div>
+        <div class="logo-card"><img src="logo-triathlon.png" alt="Triathlon" onerror="this.src='https://placehold.co/120x60/fff/333?text=Triathlon'"></div>
+        
+        <!-- GRUPO B (Duplicado para el efecto infinito) -->
+        <div class="logo-card"><img src="logo-tinka.png" alt="Tinka" onerror="this.src='https://placehold.co/120x60/fff/333?text=Tinka'"></div>
+        <div class="logo-card"><img src="logo-bcp.png" alt="BCP" onerror="this.src='https://placehold.co/120x60/fff/333?text=BCP'"></div>
+        <div class="logo-card"><img src="logo-gorepiura.png" alt="Gobierno Regional de Piura" onerror="this.src='https://placehold.co/120x60/fff/333?text=GORE+Piura'"></div>
+        <div class="logo-card"><img src="logo-sodexo.png" alt="Sodexo" onerror="this.src='https://placehold.co/120x60/fff/333?text=Sodexo'"></div>
+        <div class="logo-card"><img src="logo-hotelluoxo.png" alt="Hotel Luoxo" onerror="this.src='https://placehold.co/120x60/fff/333?text=Hotel+Luoxo'"></div>
+        <div class="logo-card"><img src="logo-coinreivic.png" alt="Coinreivic" onerror="this.src='https://placehold.co/120x60/fff/333?text=Coinreivic'"></div>
+        <div class="logo-card"><img src="logo-unp.png" alt="Universidad Nacional de Piura" onerror="this.src='https://placehold.co/120x60/fff/333?text=UNP'"></div>
+        <div class="logo-card"><img src="logo-triathlon.png" alt="Triathlon" onerror="this.src='https://placehold.co/120x60/fff/333?text=Triathlon'"></div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE SECTORES -->
+  <section class="sectores-section">
+    <div class="sectores-banner">
+      <div class="title-with-lines">Presentes en diversos sectores</div>
+      
+      <div class="sectores-grid">
+        <div class="sector-item">
+          <div class="sector-icon"><i class="fa-solid fa-industry"></i></div>
+          <div class="sector-text">
+            <h4>Industrial</h4>
+            <p>Plantas y fábricas<br>de producción</p>
+          </div>
+        </div>
+        
+        <div class="sector-item">
+          <div class="sector-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+          <div class="sector-text">
+            <h4>Comercial</h4>
+            <p>Tiendas, retail y<br>centros comerciales</p>
+          </div>
+        </div>
+        
+        <div class="sector-item">
+          <div class="sector-icon"><i class="fa-regular fa-building"></i></div>
+          <div class="sector-text">
+            <h4>Corporativo</h4>
+            <p>Oficinas y edificios<br>empresariales</p>
+          </div>
+        </div>
+        
+        <div class="sector-item">
+          <div class="sector-icon"><i class="fa-solid fa-bell-concierge"></i></div>
+          <div class="sector-text">
+            <h4>Hospitalidad</h4>
+            <p>Hoteles, restaurantes<br>y servicios</p>
+          </div>
+        </div>
+        
+        <div class="sector-item">
+          <div class="sector-icon"><i class="fa-solid fa-house-medical"></i></div>
+          <div class="sector-text">
+            <h4>Salud</h4>
+            <p>Clínicas, laboratorios<br>y centros médicos</p>
+          </div>
+        </div>
+        
+        <div class="sector-item">
+          <div class="sector-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="sector-text">
+            <h4>Educativo</h4>
+            <p>Colegios, universidades<br>e institutos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER CONTACTO -->
+  <footer class="footer-contact">
+    <div class="footer-grid">
+      <div class="contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <div class="contact-item-text">
+          <span>Teléfono:</span>
+          <strong>+51 970 774 772</strong>
+        </div>
+      </div>
+      <div class="contact-item">
+        <i class="fa-regular fa-envelope"></i>
+        <div class="contact-item-text">
+          <span>Correo:</span>
+          <strong>comercial@ingeytec.pe</strong>
+        </div>
+      </div>
+      <div class="contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <div class="contact-item-text">
+          <span>Dirección:</span>
+          <strong>Mz. I lote 5 Urb Angamos - Piura</strong>
+        </div>
+      </div>
+      <div class="social-follow">
+        <span>Síguenos en:</span>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      2026 &copy; INGEYTEC Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/51970774772" class="whatsapp-btn" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+  </a>
+
+</body>
+</html>
