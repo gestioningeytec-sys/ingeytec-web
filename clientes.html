@@ -126,7 +126,7 @@
       flex: 0 1 80px; /* Ancho de la línea */
     }
 
-    /* CARRUSEL INFINITO DE LOGOS (NUEVO) */
+    /* CARRUSEL INFINITO DE LOGOS */
     .logos-section { 
       padding: 80px 0 60px; 
       text-align: center; 
@@ -143,7 +143,7 @@
       position: relative;
     }
 
-    /* Efecto de desvanecimiento a los lados (Opcional, pero se ve muy profesional) */
+    /* Efecto de desvanecimiento a los lados */
     .marquee-container::before, .marquee-container::after {
       content: "";
       position: absolute;
@@ -216,13 +216,11 @@
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
-      /* Hacer los logos grises hasta que se pase el mouse (Opcional, dale un toque más premium) */
-      filter: grayscale(100%) opacity(0.7);
-      transition: filter 0.3s;
+      transition: transform 0.3s; /* Removido el filtro de blanco y negro */
     }
     
     .logo-card:hover img {
-      filter: grayscale(0%) opacity(1);
+      transform: scale(1.05); /* Efecto zoom ligero al pasar el mouse */
     }
 
     /* SECCIÓN DE SECTORES (BANNER AZUL) */
@@ -309,16 +307,14 @@
           <li><a href="servicios.html">Servicios</a></li>
           <li><a href="cobertura.html">Cobertura</a></li>
           <li><a href="clientes.html" class="active">Clientes</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contacto</a></li>
-          <li><a href="#">Cotizar</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
       <div class="contact-box">
         <i class="fa-solid fa-headset"></i>
         <div class="contact-details">
           <span class="label">Atención 24/7</span>
-          <span class="phone">987 328 021</span>
+          <span class="phone">970774772</span>
         </div>
       </div>
     </div>
@@ -368,7 +364,6 @@
     <div class="marquee-container">
       
       <!-- FILA 1: Movimiento hacia la izquierda -->
-      <!-- IMPORTANTE: Para que el loop sea infinito sin cortes, el contenido debe estar duplicado dentro de la misma pista -->
       <div class="marquee-track">
         <!-- GRUPO A (Original) -->
         <div class="logo-card"><img src="logo-smartfit.png" alt="Smart Fit" onerror="this.src='https://placehold.co/120x60/fff/333?text=Smart+Fit'"></div>
@@ -393,7 +388,7 @@
         <div class="logo-card"><img src="logo-blexim.png" alt="Blexim" onerror="this.src='https://placehold.co/120x60/fff/333?text=Blexim'"></div>
       </div>
 
-      <!-- FILA 2: Movimiento hacia la derecha (Clase reverse añadida) -->
+      <!-- FILA 2: Movimiento hacia la derecha -->
       <div class="marquee-track reverse">
         <!-- GRUPO B (Original) -->
         <div class="logo-card"><img src="logo-tinka.png" alt="Tinka" onerror="this.src='https://placehold.co/120x60/fff/333?text=Tinka'"></div>
